@@ -6,30 +6,38 @@
         xmlns:local="clr-namespace:NwApp.WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="800">
-    <Grid>
+    <Grid Name ="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <WrapPanel Name="Buttons" Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
-            <Button Name="Btn1" Margin="10" Content="Exercise 1" Click="Btn1_Click"/>
-            <Button Name="Btn3" Margin="10" Content="Exercise 2" />
-            <Button Name="Btn2" Margin="10" Content="Exercise 3" />
-            <Button Name="Btn4" Margin="10" Content="Exercise 4" />
-            <Button Name="Btn5" Margin="10" Content="Exercise 5" />
-            <Button Name="Btn6" Margin="10" Content="Exercise 6" />
-            <Button Name="Btn7" Margin="10" Content="Exercise 7" />
-            <Button Name="Btn8" Margin="10" Content="Exercise 8" />
-            <Button Name="Btn9" Margin="10" Content="Exercise 9" />
-            <Button Name="Btn10" Margin="10" Content="Exercise 10" />
+        <WrapPanel Name="Headline" Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="2">
+            <TextBlock Text="HomeWork 01/09/22" />
         </WrapPanel>
-        <WrapPanel Name="DataGridPanel" Grid.Row="1" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-            <DataGrid Name="Dgrid"/>
-          </WrapPanel>
+        <WrapPanel Name="Buttons" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Grid.RowSpan="2">
+            <Button Name="Btn1" Content="Exercise 1" Margin="10" Click="Btn1_Click" />
+            <Button Name="Btn2" Content="Exercise 2" Margin="10" Click="Btn2_Click" />
+            <Button Name="Btn3" Content="Exercise 3" Margin="10" Click="Btn3_Click" />
+            <Button Name="Btn4" Content="Exercise 4" Margin="10" Click="Btn4_Click" />
+            <Button Name="Btn5" Content="Exercise 5" Margin="10" Click="Btn5_Click" />
+            <Button Name="Btn6" Content="Exercise 6" Margin="10" Click="Btn6_Click" />
+            <Button Name="Btn7" Content="Exercise 7" Margin="10" Click="Btn7_Click" />
+            <Button Name="Btn8" Content="Exercise 8" Margin="10" Click="Btn8_Click" />
+            <Button Name="Btn9" Content="Exercise 9" Margin="10" Click="Btn9_Click" />
+        </WrapPanel>
+        <WrapPanel Name="GridPanel" Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+            <Border x:Name="BDRounded" CornerRadius="15" BorderThickness="1" BorderBrush="Transparent">
+                <Border.BitmapEffect>
+                    <DropShadowBitmapEffect />
+                </Border.BitmapEffect>
+                <DataGrid Name="Dgrid" Margin="10" />
+            </Border>
+        </WrapPanel>
     </Grid>
 </Window>
